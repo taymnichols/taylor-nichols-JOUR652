@@ -1,10 +1,14 @@
-body {
+/*styles for my resume*/
+ 
+  
+  body {
 	font-family: 'Open Sans', arial, sans-serif;
 	font-size: 1em;
 	color: #444
 	font-style:weight400;
 }
 
+/*my name at top*/
 h1 {
 	font-size:3em;
 	color:#444;
@@ -12,30 +16,46 @@ h1 {
 	text-align: center;
 }
 
+/*style for title - note for adam - does this work on strong?*/
+ 
+ strong {
+ font-size: 1.5 em;
+ text-transform: uppercase;
+ color: #33485e;
+ }
+ 
+/*headers for resume sections*/
+    
 h2 {
 	font-size:1.5em;
 	text-transform: uppercase;
 	color: #fff;
 	background-color: #33485e}
-
-h3 {
+ 
+/*job titles*/
+    
+ h3 {
 	font-size:1.5em;
 	font-weight:600;}
 
- <!-- question for adam - do we need to set the font weight for the following two headings again if the default is 400 above? -->
+/*question for adam - do we need to set the font weight for the following two headings again if the default is 400 above?*/
+/*company names*/
 
 h4 {
 	font-size:1.5em;
 	font-weight:400;
 }
 
+/*job dates*/
+  
 h5 {
 	font-size:1em;
 	font-style: italic;
 	font-weight:400;
 }
 
- <!-- Another question for adam - does this work for li, or do we need to do ul? It looks like it worked I think but it's hard to tell becuase it was a small change in size. -->
+/*Another question for adam - does this work for li, or do we need to do ul?*/
+/*style for lists - contact info, education, skills*/
 
 li {
 	font-size:1em;
