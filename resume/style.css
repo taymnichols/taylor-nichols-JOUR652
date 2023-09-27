@@ -1,24 +1,42 @@
 body {
-font-family: 'Open Sans', arial, sans-serif;
-font-size: 1em;
-color: #444
-font-style:weight400;
+	font-family: 'Open Sans', arial, sans-serif;
+	font-size: 1em;
+	color: #444
+	font-style:weight400;
 }
 
 h1 {
-font-size:3em;
-color:#444;
-text-transform: uppercase;
-text-align: center;
+	font-size:3em;
+	color:#444;
+	text-transform: uppercase;
+	text-align: center;
 }
 
 h2 {
-font-size:1.5em;
-text-transform: uppercase;
-color: #fff;
-background-color: #33485e}
+	font-size:1.5em;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #33485e}
 
 h3 {
-font-size: 1.5em;
-font-style: weight600}
+	font-size:1.5em;
+	font-weight:600;}
 
+ <!-- question for adam - do we need to set the font weight for the following two headings again if the default is 400 above? -->
+
+h4 {
+	font-size:1.5em;
+	font-weight:400;
+}
+
+h5 {
+	font-size:1em;
+	font-style: italic;
+	font-weight:400;
+}
+
+ <!-- Another question for adam - does this work for li, or do we need to do ul? It looks like it worked I think but it's hard to tell becuase it was a small change in size. -->
+
+li {
+	font-size:1em;
+}
