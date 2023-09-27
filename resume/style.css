@@ -1,62 +1,117 @@
 /*styles for my resume*/
  
   
-  body {
+body {
 	font-family: 'Open Sans', arial, sans-serif;
 	font-size: 1em;
-	color: #444
+	color: #444;
 	font-style:weight400;
 }
 
+/*styling for entire page*/
+
+.container {
+width: 100%;
+max-width: 1200px;
+margin:0 auto;
+padding-bottom: 50px;
+}
+
 /*my name at top*/
-h1 {
+#name {
 	font-size:3em;
 	color:#444;
 	text-transform: uppercase;
 	text-align: center;
+	border-bottom: 1px solid #33485e;
+	width: 60%;
+	min-width: 300px;
+	margin: 0 auto;
 }
 
-/*style for title - note for adam - does this work on strong?*/
+/*style for title*/
  
- strong {
+ #title {
  font-size: 1.5 em;
  text-transform: uppercase;
  color: #33485e;
+ font-weight: 600;
+ margin-top: 20px;
+text-align: center;
  }
  
 /*headers for resume sections*/
     
-h2 {
+.sectionheader {
 	font-size:1.5em;
 	text-transform: uppercase;
 	color: #fff;
-	background-color: #33485e}
+	background-color: #33485e;
+	margin: 10px 0 20px 0;
+	width: 70%;
+	min-width: 300px;
+}
  
 /*job titles*/
     
- h3 {
+.jobtitle {
 	font-size:1.5em;
 	font-weight:600;}
 
 /*question for adam - do we need to set the font weight for the following two headings again if the default is 400 above?*/
+
 /*company names*/
 
-h4 {
-	font-size:1.5em;
+.organization {
+	font-size:1.25em;
 	font-weight:400;
 }
 
 /*job dates*/
   
-h5 {
+.date {
 	font-size:1em;
 	font-style: italic;
 	font-weight:400;
+	margin-top:2px;
+	margin: 0px;
 }
 
+/* job descriptions*/
+
+.description {
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:0px;
+	margin-right:0px;
+}
 /*Another question for adam - does this work for li, or do we need to do ul?*/
 /*style for lists - contact info, education, skills*/
 
+/* styling for contact info list*/
+.menu {
+margin: 0 auto;
+display: inline;
+}
 li {
 	font-size:1em;
+}
+
+/* styling for education list items*/
+#degrees {
+	margin-top: 5px;	
+}
+
+/*styling for skills section*/
+#do {
+	margin-top: 0px;
+}
+
+/*mission statement*/
+
+.top {
+width: 60%;
+min-width: 300px;
+margin:0 auto;
+padding: bottom 50px;;
 }
