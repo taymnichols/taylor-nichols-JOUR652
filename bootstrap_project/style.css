@@ -1,0 +1,26 @@
+/*styles for my bootstrap exerise*/
+
+.column-images {
+    width: 100%;
+    max-width: 500px;
+    padding-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {text-align: center;}
+
+p {
+    text-align: center;
+}
+
+#icon {
+font-size: 3em;
+text-align: center;
+}
+
+#center-content {
+    align-items: center;
+}
