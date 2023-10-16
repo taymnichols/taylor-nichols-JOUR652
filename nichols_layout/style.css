@@ -1,0 +1,78 @@
+#content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 30px;
+}
+#byline {
+    font-family: Helvetica, Arial,  sans-serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-style: italic;
+}
+p {
+font-family: Georgia, Times, serif;
+font-size: 13px;
+width: 85%;
+}
+
+.column-images {
+    width: 85%;
+    max-width: 800px;
+    padding-top: 20px;
+}
+
+.photo-source {
+    margin-top: -1px;
+    font-size: 10px;
+}
+
+.photo-caption {
+    font-style: italic;
+}
+
+blocktext {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.attribution {
+    font-style: italic;
+    text-align: right;
+}
+
+.quoteblock {
+    width: 80%;
+    border-top: 2px solid navy;
+    border-bottom: 2px solid navy;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.related-links {
+    border: 1px solid black;
+    width: 80%;
+}
+h3 {
+    font-family: Helvetica, sans-serif;
+    padding-left: 20px;
+    margin-top: 4px;
+}
+
+ul {
+    margin-top: -10px;
+}
+li {
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+}
