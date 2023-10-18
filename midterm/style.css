@@ -1,0 +1,118 @@
+  /*stylesheet for my article on SZA*/
+  
+  .masthead {
+        width: 75%;
+    }
+    .deck {
+        font-family: 'Young Serif', helvetica, sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 5px;
+    }
+    #content {
+        width: 90%;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    h1 {
+        font-family: 'Young Serif', Arial, sans-serif;
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: -5px;
+    }
+
+    #byline {
+        font-family: Arial,  sans-serif;
+        font-size: 14px;
+        font-style: italic;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    #date {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        font-style: italic;
+    }
+    h2 {
+        font-family: 'Young Serif', arial, sans-serif;
+        font-size: 20px;
+    }
+
+    p {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    width: 85%;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 20px;
+    }
+    
+    .photo {
+        width: 85%;
+        max-width: 800px;
+        padding-top: 20px;
+        margin: 0 auto;
+    }
+    
+    .photo-source {
+        margin-top: -1px;
+        font-size: 10px;
+    }
+    
+    .photo-caption {
+        font-style: italic;
+    }
+    
+   
+    .playlist {
+        margin: 0 auto;
+        width: 85%;
+        padding-top: 20px;
+
+    }
+
+    blocktext {
+        font-family: 'Young Serif';
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .attribution {
+        font-style: italic;
+        text-align: right;
+    }
+    
+    .quoteblock {
+        width: 80%;
+        border-top: 2px solid navy;
+        border-bottom: 2px solid navy;
+        padding-top: 20px;
+        margin-bottom: 20px;
+        margin: 0 auto;
+    }
+    
+    .related-links {
+        border: 1px solid black;
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    h3 {
+        font-family: 'Yong Serif', sans-serif;
+        padding-left: 20px;
+        margin-top: 4px;
+    }
+    
+    ul {
+        margin-top: -10px;
+    }
+    li {
+        font-family: arial, sans-serif;
+        font-style: italic;
+        text-align: left;
+    }
