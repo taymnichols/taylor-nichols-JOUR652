@@ -1,8 +1,5 @@
 /*stylesheet for my resume*/
 
-html {
-    background-color: #77AEE6;
-}
 .sidenav{
     height: 100%;
     width: 175px;
@@ -59,20 +56,58 @@ html {
     .sidenav a {font-size: 18px;}
   }
 .content {
-    margin: 200px;
+    margin-left:200px;
+    width: 100%;
+    background-color: #77AEE6;
 }
   body {
     font-family: 'Sofia Sans Condensed', Helvetica, sans-serif;
   }
 
   .container {
-    background-color: #77AEE6;
+    background: #77AEE6;
     
   }
 
   h1 {
    color:white !important;
    background-color: #153B61;
-   width: 300px;
+   width: 200px;
    text-align: center;
   }
+
+h2 {
+    color:white !important;
+    background-color: #153B61;
+    width: 200px;
+    text-align: center;
+}
+
+h4 {
+    font-weight: 300;
+}
+
+li {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#work-sample {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-image {
+    float: left;
+  width: 30%;
+  padding-right: 10px;
+}
+
+.container a {
+    color: black;
+}
+.article-headline:hover {
+    color:darkblue
+}
+
