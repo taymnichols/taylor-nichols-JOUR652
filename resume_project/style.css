@@ -12,19 +12,22 @@
     padding-top: 20px;
 }
 
+ /* I've tried every way I can think of to give the top of my nav bar some breathing room on the left and I can't seem to fix it*/
+.nav-topper {
+    margin-left: 2px;
+    text-align: right;
+}
 #name {
-    font-size: 1.5em;
+    font-size: 2.25em;
     font-weight: bold;
-    text-align: center;
 }
 
 #description {
-    font-size: 1em;
-    text-align: center;
+    font-size: 1.2em;
 }
 
 /* The navigation menu links */
-.sidenav a {
+.navbar-a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-family:'Sofia Sans Condensed', Helvetica, sans-serif;
@@ -43,6 +46,7 @@
     text-align: center;
   }
 
+
   /* Style page content */
   .main {
     margin-left: 160px; /* Same as the width of the sidebar */
@@ -55,6 +59,7 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
 .content {
     margin-left:200px;
     width: 100%;
@@ -74,21 +79,38 @@
    background-color: #153B61;
    width: 200px;
    text-align: center;
+   border: 1px solid #153B61;
+   border-radius: 8px;
   }
 
+  /* is there a way to fit the edges of the h2 to the text?*/
 h2 {
     color:white !important;
     background-color: #153B61;
-    width: 200px;
+    width: 150px;
     text-align: center;
+    border: 1px solid #153B61;
+   border-radius: 8px;
+   margin-top: 5px;
+   margin-bottom: 10px;
 }
 
+h3 {
+    font-size: 30px;
+    font-weight: 500;
+}
 h4 {
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 28px;
 }
 
 li {
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.lead {
+    font-size: 23px;
     font-weight: 300;
 }
 
@@ -110,4 +132,3 @@ li {
 .article-headline:hover {
     color:darkblue
 }
-
