@@ -1,0 +1,121 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+library(janitor)
+library(tidycensus)
+```
+
+
+```{r}
+setwd("~/data_journalism/taylor-nichols-JOUR652/final_data_project")
+louisiana_prison_sentences <- read_csv("lousiana_life_without_parole_sept_2021.csv") |> clean_names()
+```
+
+```{r}
+ggplot(louisiana_prison_sentences, aes(x=factor(bucket_age))) +
+geom_bar() +
+  geom_text(aes(label = after_stat(count)), stat = "count", vjust = -.2, colour = "black") +
+xlab("Bucket Age") +
+ylab("Number of Incarcerated People") +
+theme_linedraw()
+```
+
+```{r}
+ggplot(louisiana_prison_sentences, aes(x=factor(offenses))) +
+geom_bar() +
+xlab("Type of Offense") +
+ylab("Number of Incarcerated People") +
+theme_linedraw()
+```
+
+```{r}
+fig <- plot_ly(louisiana_prison_sentences, x = ~offenses, y = ~bucket_age, type = 'scatter', mode = 'markers')
+
+fig
+```
+
+```{r}
+offenses <- louisiana_prison_sentences |> group_by(offenses) |>
+  summarise(total = n())
+
+write_csv(offenses, "~/data_journalism/taylor-nichols-JOUR652/final_data_project/offenses.csv")
+```
+
+```{r}
+offenses_age <- louisiana_prison_sentences |> group_by(bucket_age, offenses) |>
+  summarise(total = n()) |>
+  arrange(desc(total))
+
+write_csv(offenses_age, "~/data_journalism/taylor-nichols-JOUR652/final_data_project/offenses_age.csv")
+```
+
+```{r}
+age <- louisiana_prison_sentences |> group_by(bucket_age) |>
+  summarise(total = n()) |>
+  arrange(desc(total))
+
+write_csv(age, "~/data_journalism/taylor-nichols-JOUR652/final_data_project/bucket_age.csv")
+```
+
+```{r}
+offenses_age_top_5 <- by(mt, mt["cyl"], head, n=4)
+```
+
+```{r}
+offenses_top_15 <- offenses |> top_n(15) |>
+  arrange(desc(total))
+
+write_csv(offenses_top_15, "~/data_journalism/taylor-nichols-JOUR652/final_data_project/offenses_top_15.csv")
+```
+```{r}
+#lets load census data
+acs_variables <- load_variables(2021, "acs5", cache = TRUE)
+```
+
+```{r}
+#making a data frame of racial and gender makeup of sentences
+la_prison_sentences_race_gender <- louisiana_prison_sentences |>
+  group_by(race, gender) |>
+  summarise (total_offenses = n())
+
+louisiana_prison_sentences_parishes <- louisiana_prison_sentences |> 
+  group_by(parish_of_conviction, race, gender) |>
+  summarise(total_convictions = n())
+
+#pulling racial demographic data for louisiana
+la_racial_demographics <- get_acs(geography = "county",
+              variables = c(total_race = "B02001_001", white = "B02001_002", black = "B02001_003"),
+              state = "LA",
+              year = 2021)
+```
+
+```{r}
+#now lets fix our demographics dataframe
+la_racial_demographics_clean <- la_racial_demographics |> clean_names() |> 
+   pivot_wider(names_from = variable, values_from = estimate)
+
+```
+
+```{r}
+#more fixing and calculating percentages
+la_racial_demographics_clean_2 <- la_racial_demographics_clean |> group_by(geoid) |>
+  fill(total_race, white, black) |>
+  filter(!is.na(total_race) & !is.na(white) & !is.na(black)) |>
+  select(-moe) |> 
+  mutate(pct_white = white/total_race*100, pct_black = black/total_race*100)
+```
+
+```{r}
+#now lets look at the parish data before we join
+louisiana_prison_sentences_parishes <- louisiana_prison_sentences_parishes |> 
+  group_by(parish_of_conviction) |>
+  mutate(total_parish = sum(total_convictions, na.rm = TRUE)) |> 
+  ungroup()
+```
+
