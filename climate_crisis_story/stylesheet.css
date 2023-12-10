@@ -1,0 +1,198 @@
+.content {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#headerphoto {
+max-width: 100%;
+margin: auto 0;
+}
+
+h1 {
+text-align: center;
+background-color: rgba(30, 30, 30, 0.70); /* asked chatgpt how to add a transparent background color to my h1 */
+padding: 10px; /* Add padding to make the background visible */
+    }
+
+.heat {
+font-family: 'Oswald', sans-serif;  
+ font-weight: 700;
+ font-size: 4em;
+ color: red
+}
+
+.and {
+font-family: 'Oswald', sans-serif;  
+font-weight: 300;
+font-size:4em;
+}
+
+.inequality {
+ font-family: 'Oswald', sans-serif;  
+ font-weight: 300;
+ font-size: 4em;
+}
+
+ h2 {
+text-align: center;
+font-family: sans-serif;  
+font-weight: 200;
+ }
+
+ .byline {
+font-style: italic;
+ text-align: center;
+ }
+
+ .text {
+margin-left: 150px;
+margin-right: 150px;
+ }
+
+h3 {
+font-style: italic;
+margin-left: 50px;
+}
+
+.container {
+text-align: center;
+margin: 30px;
+}
+
+.source {
+font-size: .75em;
+font-style: italic;
+text-align: left;
+margin-left: 0;
+margin-bottom: 5px; 
+}
+
+.caption {
+text-align: left;
+font-weight: 600;
+font-style: italic;
+margin-left: 0;
+}
+
+img {
+max-width: 100%;
+}
+
+p {
+ max-width: 90%;
+margin: 50px;
+}
+
+.graphic {
+max-width: 70%;
+margin: 0 auto;
+margin-bottom: 10px;
+}
+
+.pullquote {
+font-family: 'Oswald', sans-serif;
+font-size: 1.5em;
+font-weight: 500;
+font-style: italic;
+margin-bottom: 20px;
+border-top: 3px solid red;
+border-bottom: 3px solid red;
+max-width: 75%;
+margin: 0 auto;
+}
+
+.sidebar {
+    width: 450px;
+    float: right;
+    background-color: #f1f1f1;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border: red solid 3px;
+  }
+
+  .sidebarhead {
+    margin-top: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .sidebarp {
+    margin: 0 auto;
+    margin-bottom: 5px;
+    margin-left: 30px;
+    font-size: .9em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+    
+    .sidebarphead {
+    margin: 0 auto;
+    margin-bottom: 5px;
+    font-size: .9em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    }
+
+  li {
+    margin-bottom: 5px;
+    margin-right: 10px;
+    font-size: .9em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .source {
+    font-size: .62em;
+    font-style: italic;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-right: 0;
+  }
+
+  a:link {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: darkred;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: orange;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+@media screen and (max-width: 500px) 
+{
+      /* Was having some trouble getting this to work - asked ChatGPT for help, it wasn't SUPER helpful but it did kind of nudge me to realize my tags in here weren't aligned with how they were written in my HTML. Also my screen max width wasn't big enough to see on my computer. I copied and pasted my media query into ChatGPT and asked it why it wasn't working. It told me to check my HTML basically. */
+
+    #main {
+      margin: 0;
+    }
+    
+    .content {
+        width: 100%;
+        margin: 0;
+    }
+
+    .text {
+        width: 100%;
+        margin: 0;
+    }
+
+    h1 {
+        width: auto;
+        font-size: 2em;
+    }
+
+    .sidebar {
+      width: 90%;
+      float: none;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+

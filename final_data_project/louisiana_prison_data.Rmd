@@ -9,6 +9,8 @@ library(ggplot2)
 library(plotly)
 library(janitor)
 library(tidycensus)
+install.packages("stringdist")
+library(stringdist)
 ```
 
 
@@ -64,10 +66,6 @@ write_csv(age, "~/data_journalism/taylor-nichols-JOUR652/final_data_project/buck
 ```
 
 ```{r}
-offenses_age_top_5 <- by(mt, mt["cyl"], head, n=4)
-```
-
-```{r}
 offenses_top_15 <- offenses |> top_n(15) |>
   arrange(desc(total))
 
@@ -80,12 +78,12 @@ acs_variables <- load_variables(2021, "acs5", cache = TRUE)
 
 ```{r}
 #making a data frame of racial and gender makeup of sentences
-la_prison_sentences_race_gender <- louisiana_prison_sentences |>
+la_prison_sentences_race <- louisiana_prison_sentences |>
   group_by(race, gender) |>
   summarise (total_offenses = n())
 
 louisiana_prison_sentences_parishes <- louisiana_prison_sentences |> 
-  group_by(parish_of_conviction, race, gender) |>
+  group_by(parish_of_conviction, race) |>
   summarise(total_convictions = n())
 
 #pulling racial demographic data for louisiana
@@ -117,5 +115,52 @@ louisiana_prison_sentences_parishes <- louisiana_prison_sentences_parishes |>
   group_by(parish_of_conviction) |>
   mutate(total_parish = sum(total_convictions, na.rm = TRUE)) |> 
   ungroup()
+
+louisiana_prison_sentences_parishes <- louisiana_prison_sentences_parishes |> 
+  mutate(pct_of_total = total_convictions/total_parish*100)
+```
+
+```{r}
+#ok let's try and join
+# Function to find the best match
+
+la_parishes_demographics <- louisiana_prison_sentences_parishes %>%
+  mutate(matched_parish = sapply(parish_of_conviction, function(x) la_racial_demographics_clean_2$name[str_detect(tolower(la_racial_demographics_clean_2$name), tolower(x))][1])) %>%
+  left_join(la_racial_demographics_clean_2, by = c("matched_parish" = "name"))
+
+# Clean up and remove intermediate columns
+la_parishes_demographics <- la_parishes_demographics %>%
+  select(-matched_parish)
+
+```
+```{r}
+write.csv(la_parishes_demographics, "~/data_journalism/taylor-nichols-JOUR652/final_data_project/parishes_demographics.csv")
+```
+
+```{r}
+top_offenses_age <- louisiana_prison_sentences |>
+  group_by(bucket_age, offenses) |>
+  summarize(total_offenses = n())
+
+write_csv(top_offenses_age, "~/data_journalism/taylor-nichols-JOUR652/final_data_project/top_offenses_age.csv")
+
+```
+
+```{r}
+louisiana_prison_sentences |>
+  group_by(offenses, bucket_age) |>
+  summarise(count = n()) |>
+  arrange(desc(bucket_age))5 |>
+  filter(offenses == "ARMED ROBBERY")
+```
+```{r}
+parish_conviction_count <- louisiana_prison_sentences |> group_by(parish_of_conviction) |>
+  summarise(total_convictions = n())
+
+write.csv(parish_conviction_count_total_pop, "~/data_journalism/taylor-nichols-JOUR652/final_data_project/parishes_convictions.csv")
+```
+
+```{r}
+
 ```
 
