@@ -1,18 +1,68 @@
 /*css styles for my final data project*/
 
+body {
+background-color: #000000;
+}
+
 .container {
     text-align: center;
 }
 
+#header {
+color:#EDEDED;
+font-size: 2em;
+margin-bottom: 50px;
+margin: 20px;
+}
+
+.textboxleft {
+    background-color: #c8c8c8;
+    color: rgb(0, 0, 0);
+    font-family: 'Inconsolata', monospace;
+    font-weight: 500;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+}
+
+.textboxright {
+    background-color: #c8c8c8;
+    color: rgb(0, 0, 0);
+    font-family: 'Inconsolata', monospace;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
 #headline {
-font-size: 6em;
+font-size: 4em;
 font-weight: bold;
+color: #EDEDED;
+text-align: center;
+}
+
+h2 {
+font-size: 1.5em;
+color: #EDEDED;
+font-weight: 300;
+text-align: center;
+font-style: italic;
 }
 
 #byline {
     font-size: 1em;
     font-style: italic;
     font-weight: 200;
+    color: #EDEDED;
+    text-align: left;
 }
 
 .chapter {
@@ -20,13 +70,26 @@ font-weight: bold;
     font-size: 2em;
 }
 
-p{
-    text-align: left;
-}
-
 /*note - is there a way to get this to be left-aligned to edge of photo?*/
 .caption {
     font-size: 1em;
     font-style: italic;
     font-weight: lighter;
+    text-align: left;
+    color: #EDEDED;
+}
+
+p {
+    background-color: #c8c8c8;
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+
+iframe {
+    background-color: #EDEDED;
+}
+
+img {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
