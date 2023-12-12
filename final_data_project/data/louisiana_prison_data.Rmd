@@ -9,13 +9,11 @@ library(ggplot2)
 library(plotly)
 library(janitor)
 library(tidycensus)
-install.packages("stringdist")
 library(stringdist)
 ```
 
 
 ```{r}
-setwd("~/data_journalism/taylor-nichols-JOUR652/final_data_project")
 louisiana_prison_sentences <- read_csv("lousiana_life_without_parole_sept_2021.csv") |> clean_names()
 ```
 
@@ -161,6 +159,13 @@ write.csv(parish_conviction_count_total_pop, "~/data_journalism/taylor-nichols-J
 ```
 
 ```{r}
+sentences <- louisiana_prison_sentences |> 
+  group_by(offenses) |> 
+  summarise(total_sentences = n()) |>
+  arrange(desc(total_sentences)) |>
+    slice(1:10) 
+
+write_csv(sentences, "top10_sentences.csv")
 
 ```
 
